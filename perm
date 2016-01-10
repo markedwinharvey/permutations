@@ -1,0 +1,5 @@
+#!/usr/bin/env python 
+with open('perm.html','r') as f:
+	perm = f.read()
+print 'Content-type: text/html\n'
+print perm

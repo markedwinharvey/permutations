@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv='content-type' content='text/html;charset=utf-8'></meta>
+	<script type='text/javascript' src='https://code.jquery.com/jquery-2.1.3.js'></script>
+	<script>
+		var id_num = 0;
+		function plot(data){
+			var set_size = data[0], iterator = data[1], map = data[2];
+			var new_plot = document.createElement('div');
+			var plot_id = 'plot' + id_num;
+			new_plot.id = plot_id;
+			new_plot.className = 'plot';
+			$('#plots').append(new_plot);
+			$('#'+plot_id).css({
+				'height':2*set_size,
+				'width':2*set_size
+			});
+			for (i = 0; i < map.length; i++){
+				var point = document.createElement('div');
+				point.className = 'point';
+				point.style.marginLeft = i*2+'px';
+				point.style.marginTop = 2*set_size - 2*map[i]+'px';
+				$('#'+plot_id).append(point);
+			}
+			id_num++;
+		}
+		
+		$(document).on('click','#visualize',function(){
+			var set_size = $('#set_size').val();
+			var iterator = $('#iterator').val();
+			$('#message').html('');
+			if (!(isNaN(set_size) || isNaN(iterator)) && $('#set_size').val() > 0 && $('#iterator').val() > 0 ){
+				$.ajax({
+					method:'post',
+					url:'perm_op.py',
+					data:{'package':JSON.stringify([set_size,iterator])},
+					success: function(response){
+						response = JSON.parse(response);
+						console.log(response[2]);
+						plot(response);
+					}
+				});
+				
+			}
+			else{
+				$('#message').html('Check inputs. ');
+			}
+		});
+	
+		
+	</script>
+</head>
+<body>
+	<div id='container'>
+		<span id='input_box'>
+			Permutation Set Visualizer <br>
+			set size: <textarea class='ta' id='set_size'></textarea><br>
+			iterator: <textarea class='ta' id='iterator'></textarea><br>
+			<button id='visualize'>visualize</button>
+		</span>
+		<span id='message_box'>
+			<span id='message'></span>
+		</span><br>
+		
+		<div id='plots'>
+			
+		</div>
+		
+	</div>
+
+	<style>
+		.point{
+			height:2px;
+			width:2px;
+			border-radius:2px;
+			background-color:blue;
+			display:inline-block;
+			position:absolute;
+		}
+		.plot_outer{
+			padding:5px;
+		}	
+		.plot{
+			border-style:solid;
+			border-color:black;
+			border-width:1px;
+			display:inline-block;
+			margin:1px;
+		}
+		*{
+		
+		}
+		#message_box{
+			vertical-align:top;
+			margin-left:50px;
+			
+		}
+		#message{
+			color:red;
+			font-size:12px;
+		}
+		#input_box{
+			display:inline-block;
+			text-align:center;
+			width:180px;
+		}
+		.ta{
+			resize:none;
+			height:14px;
+			width:50px;
+		}
+		#container{
+			display:inline-block;
+		}
+	</style>
+</body>
+</html>
