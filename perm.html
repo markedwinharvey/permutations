@@ -5,7 +5,7 @@
 	<script type='text/javascript' src='https://code.jquery.com/jquery-2.1.3.js'></script>
 	<script>
 		var id_num = 0;
-		function plot(data){
+		function plot(data){	//receive data from perm_op.py; generate plot and append to document
 			var set_size = data[0], iterator = data[1], map = data[2];
 			var new_plot = document.createElement('div');
 			var plot_id = 'plot' + id_num;
@@ -26,7 +26,7 @@
 			id_num++;
 		}
 
-		$(document).on('click','#visualize',function(){
+		$(document).on('click','#visualize',function(){	//generate data; send user values through ajax to perm_op.py
 			var set_size = $('#set_size').val();
 			var iterator = $('#iterator').val();
 			$('#message').html('');
@@ -105,6 +105,6 @@
 		#container{
 			display:inline-block;
 		}
-	<?style>
+	</style>
 </body>
 </html>

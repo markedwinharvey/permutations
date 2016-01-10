@@ -7,7 +7,7 @@ try:
 	subprocess.Popen(['ps -fA | grep server.py'],shell=True)
 except:
 	print '*** server not running ***';print '*** starting server ***'
-	cgitb.enable()  ## This line enables CGI error reporting
+	cgitb.enable()  
  
 	server = BaseHTTPServer.HTTPServer
 	handler = CGIHTTPServer.CGIHTTPRequestHandler
