@@ -25,7 +25,7 @@
 			}
 			id_num++;
 		}
-		
+
 		$(document).on('click','#visualize',function(){
 			var set_size = $('#set_size').val();
 			var iterator = $('#iterator').val();
@@ -41,14 +41,12 @@
 						plot(response);
 					}
 				});
-				
+		
 			}
 			else{
 				$('#message').html('Check inputs. ');
 			}
 		});
-	
-		
 	</script>
 </head>
 <body>
@@ -62,13 +60,10 @@
 		<span id='message_box'>
 			<span id='message'></span>
 		</span><br>
-		
-		<div id='plots'>
-			
-		</div>
-		
+		<div id='plots'>	
+		</div>		
 	</div>
-
+	
 	<style>
 		.point{
 			height:2px;
@@ -88,13 +83,10 @@
 			display:inline-block;
 			margin:1px;
 		}
-		*{
-		
-		}
 		#message_box{
 			vertical-align:top;
 			margin-left:50px;
-			
+	
 		}
 		#message{
 			color:red;
@@ -113,6 +105,6 @@
 		#container{
 			display:inline-block;
 		}
-	</style>
+	<?style>
 </body>
 </html>
