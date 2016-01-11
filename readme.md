@@ -19,3 +19,5 @@ To run the program, in the command line, type "python perm.py" inside the direct
 `server.py` uses the `requests` module to check for an active server, which is available through `pip` or other avenues. 
 
 The program was written in python 2.7 on mac os 10.7. 
+
+Perm.py v.2 pre-selects dynamic content update for visualization of continuously increased iterators. Just click 'visualize'. 
