@@ -1,0 +1,55 @@
+#container{
+	display:inline-block;
+}
+#input_box{
+	display:inline-block;
+	text-align:center;
+	width:180px;
+}
+.input_text{
+	vertical-align:top;
+}
+.ta{
+	resize:none;
+	height:19px;
+	width:40px;
+}
+#automate{		
+	display:inline-block;
+	vertical-align:top;
+	margin-left:20px;
+}
+#graph_settings{
+	border-style:solid;
+	border-color:black;
+	border-width:1px;
+	border-radius:2px;
+	padding:2px;
+}
+.radio_select_text{
+	font-size:14px;
+}
+#iter_text{
+	margin-left:15px;
+}	
+.plot{
+	border-style:solid;
+	border-color:black;
+	border-width:1px;
+	display:inline-block;
+	margin:1px;
+	padding:1px;
+}
+.point{
+	height:2px;
+	width:2px;
+	border-radius:2px;
+	background-color:blue;
+	display:inline-block;
+	position:absolute;
+}
+#message{
+	color:red;
+	font-size:12px;
+	display:inline-block;
+}	

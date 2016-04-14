@@ -1,0 +1,8 @@
+#!/usr/bin/env python
+def main():
+	with open('static/perm.js','r') as f:
+		doc = f.read()
+	print 'content-type:text/html\n'
+	print doc
+if __name__ == '__main__':
+	main()

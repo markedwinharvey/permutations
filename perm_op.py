@@ -1,7 +1,7 @@
 #!/usr/bin/env python 
 import cgi,json,math
 def main():
-	print 'content-type:text/html\n'
+	print
 	data = json.loads(cgi.FieldStorage()['package'].value)
 	set_size = int(data[0])
 	iterator = float(data[1])	

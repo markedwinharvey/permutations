@@ -1,0 +1,8 @@
+#!/usr/bin/env python
+def main():
+	with open('static/perm.css','r') as f:
+		doc = f.read()
+	print 'content-type:text/css\n'
+	print doc
+if __name__ == '__main__':
+	main()
