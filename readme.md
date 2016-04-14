@@ -1,4 +1,4 @@
-![perm append multiple](https://github.com/markedwinharvey/perm/blob/master/media/perm_fig.png)
+![perm append multiple](https://github.com/markedwinharvey/permutations/blob/master/media/perm_fig.png)
 
 `Permutations` ('perm') generates a variable-length list of permuted integer values from 0 -> (n-1). 
 
